@@ -7,8 +7,9 @@ const submitForm = document.getElementById("submitBtn");
 const checkBox = document.getElementById("checkbox");
 const form = document.getElementById("myForm");
 
-if(form){
-    form.addEventListener("submit", function (event) {
+// fungsi utk validasi input form
+if (form) {
+  form.addEventListener("submit", function (event) {
     const inputs = form.querySelectorAll("input");
     let allFilled = true;
 
@@ -38,6 +39,7 @@ if(form){
   });
 }
 
+//fungsi untuk btn-back-to-top
 if (mybutton) {
   window.onscroll = function () {
     if (
