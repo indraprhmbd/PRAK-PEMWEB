@@ -22,6 +22,7 @@ if (form) {
 
     if (!(allFilled && checkBox.checked)) {
       event.preventDefault();
+      alertSuccess.style.display = "none";
       alertDanger.style.display = "block";
       setTimeout(() => {
         alertDanger.style.display = "none";
