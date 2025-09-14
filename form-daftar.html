@@ -9,7 +9,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
     <link rel="stylesheet" href="style.css">
-    <title>Tugas 1</title>
+    <title>HealthyLife</title>
 
     <style>
         /* * {
@@ -49,9 +49,11 @@
             }
         }
     </style>
+
 </head>
 
 <body class="bg-dark">
+
     <!-- HEADER and Icon -->
     <div class="d-flex align-items-center mb-4" id="judul">
         <div class="logo-icon me-2">
@@ -69,7 +71,7 @@
     </div>
 
     <!-- NAVBAR -->
-    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,32 +97,63 @@
     </nav>
 
     <!-- ALERTS -->
-    <div id="successAlert" class="alert alert-success bg-dark" role="alert">
+    <div id="successAlert" class="alert alert-success" role="alert">
         Berhasil Mendaftarkan!
     </div>
-    <div id="dangerAlert" class="alert alert-danger bg-dark" role="alert">
+    <div id="dangerAlert" class="alert alert-danger" role="alert">
         Gagal Mendaftarkan : Isi form dengan benar!
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">HealthyLife says : </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Terimakasih sudah mendaftar menjadi anggota komunitas HealthyLife
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <a href="index.html" class="btn btn-success" type="button"
+                        style="color: var(--color-light);">Kembali</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- judul form -->
     <div class="title" id="judul">
         <h3>FORMULIR PENDAFTARAN</h3>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main Form-->
     <div class="container-fluid form">
         <form id="myForm">
-            <div class="mb-3 input-group row">
-                    <div class="row g-3">
-                        <label for="inputIdentity">Masukkan Identitas <span style="color: red;">*</span></label>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Depan"
-                                aria-label="First name">
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Belakang"
-                                aria-label="Last name">
-                        </div>
+            <div class="mb-3">
+                <div class="row">
+                    <label for="inputIdentity">Masukkan Identitas <span style="color: red;">*</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Depan"
+                            aria-label="First name">
                     </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Belakang"
+                            aria-label="Last name">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label for="exampleFormControlInput1" class="form-label">Alamat Email<span
+                                style="color: red;">*</span></label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="nama@abcdfg.com">
+                    </div>
+                </div>
             </div>
 
             <div class="input-group mb-3">
@@ -145,10 +178,27 @@
                 </div>
             </div>
 
-            <div class="input-group mb-3">
-                <div class="col-4">
-                    <label for="inputAddress" class="form-label">Usia<span style="color: red;">*</span></label>
-                    <input type="number" class="form-control" id="inputAddress" placeholder="Masukkan usia di sini">
+            <div class="row mb-3">
+                <!-- Usia -->
+                <div class="col-sm-3">
+                    <label for="inputAge" class="form-label">
+                        Usia<span style="color: red;">*</span>
+                    </label>
+                    <input type="number" class="form-control" id="inputAge" placeholder="Masukkan usia di sini">
+                </div>
+
+                <!-- Tinggi Badan -->
+                <div class="col-sm-3">
+                    <label for="inputHeight" class="form-label">Tinggi Badan (cm)<span
+                            style="color: red;">*</span></label>
+                    <input type="number" class="form-control" id="inputHeight" placeholder="Masukkan tinggi badan">
+                </div>
+
+                <!-- Berat Badan -->
+                <div class="col-sm-3">
+                    <label for="inputWeight" class="form-label">Berat Badan (kg)<span
+                            style="color: red;">*</span></label>
+                    <input type="number" class="form-control" id="inputWeight" placeholder="Masukkan berat badan">
                 </div>
             </div>
 
@@ -160,9 +210,10 @@
                         placeholder="Masukkan Alamat di sini"></textarea>
                 </div>
             </div>
+
             <div class="input-group mb-3">
                 <label for="selectForm" class="mx-3">Pilihan Program<span style="color: red;">*</span></label>
-                <select id="selectForm" class="form-select">
+                <select id="selectForm" class="form-select rounded">
                     <option selected>Pilih program di sini</option>
                     <option value="1">Resep Makanan Sehat</option>
                     <option value="2">Komunitas Sehat</option>
@@ -173,12 +224,11 @@
                 <div id="emailHelp" class="form-text"><span style="color: red;">*</span><span
                         style="color: var(--color-light);">Wajib diisi</span> </div>
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group">
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="checkbox">
                     <label class="form-check-label" for="exampleCheck1">Saya setuju menyerahkan identitas untuk
-                        keperluan
-                        penyesuain program latihan yang akan dibuat</label>
+                        keperluan penyesuain program latihan yang akan dibuat</label>
                 </div>
             </div>
             <div class="input-group mb-3 justify-content-center">
@@ -189,21 +239,26 @@
         </form>
     </div>
 
+    <!-- Back to top btn-->
     <button type="button" id="btn-back-to-top" class="btn btn-success btn-lg">
         <i class="bi bi-arrow-up-short"></i>
-    </button>
+    </button>   
 
+    <!-- footer -->
     <footer>
         <div class="footer">
-            <p>Copyright 123240062 &copy 2025</p>
+            <p>Copyright 123240062 &copy 2025 <a href="https://github.com/indraprhmbd/PRAK-PEMWEB" type="btn"
+                    style="background-color: var(--color-green-darker);">Link into Github<i
+                        class="bi bi-arrow-right-short"></i></a></p>
+
         </div>
     </footer>
 
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
 </body>
 
 </html>

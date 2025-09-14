@@ -3,6 +3,7 @@ const mybutton = document.getElementById("btn-back-to-top");
 const alert = document.getElementsByClassName("alert");
 const alertSuccess = document.getElementById("successAlert");
 const alertDanger = document.getElementById("dangerAlert");
+const modal = document.getElementsByClassName("modal");
 const submitForm = document.getElementById("submitBtn");
 const checkBox = document.getElementById("checkbox");
 const form = document.getElementById("myForm");
@@ -12,7 +13,7 @@ if (form) {
   form.addEventListener("submit", function (event) {
     const inputs = form.querySelectorAll("input");
     let allFilled = true;
-
+    
     inputs.forEach((input) => {
       if (input.value.trim() === "") {
         allFilled = false;
@@ -25,14 +26,18 @@ if (form) {
       setTimeout(() => {
         alertDanger.style.display = "none";
       }, 3000);
+
     } else {
       event.preventDefault();
       alertSuccess.style.display = "block";
       form.reset();
       alertDanger.style.display = "none";
-      setTimeout(() => {
-        alertSuccess.style.display = "none";
-      }, 5000);
+
+      //modal
+      const modal = new bootstrap.Modal(
+        document.getElementById("successModal")
+      );
+      modal.show();
     }
 
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -52,7 +57,7 @@ if (mybutton) {
     }
   };
 
-  // when clicked, scroll to top
+  //scroll ke atas
   mybutton.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });

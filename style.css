@@ -4,7 +4,7 @@
   --color-green-header: #229954;
   --color-green-primary: #27ae60;
   --color-dark: #1a1a1a;
-  --color-light: #f8f8f8;
+  --color-light: #f9f6ee;
   --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 }
@@ -12,15 +12,21 @@
 html {
   scroll-behavior: smooth;
 }
-section {
-  background-color: var(--color-green-primary);
+
+section,
+#section,
+#article {
+  scroll-margin-top: 0;
+  background-color: var(--color-green-darker);
 }
 body {
   font-family: "Poppins", Arial, sans-serif;
   font-family: var(--font-sans);
   font-weight: 400;
   line-height: 1.6;
+  overflow-x: hidden;
 }
+
 h1,
 h2,
 h3 {
@@ -40,9 +46,9 @@ b {
   font-family: "poppins", serif;
 }
 
-.alert{
-    display: none;
-    color: var(--color-light);
+.alert {
+  display: none;
+  /* color: var(--color-light); */
 }
 
 footer {
@@ -52,8 +58,6 @@ footer {
   bottom: 0;
   height: 80px;
   color: var(--color-light);
-  margin: 20px;
-  overflow: hidden;
 }
 
 p {
@@ -67,8 +71,8 @@ a {
   background-color: var(--color-dark);
 }
 
-.container {
-  background-color: var(--color-green-primary);
+.modal-title {
+  color: var(--color-light);
 }
 
 #hero {
@@ -80,7 +84,7 @@ a {
 }
 
 #judul {
-  margin: 20px;
+  margin-top: 10px;
   text-align: center;
   align-items: center;
   padding: 10px;
@@ -91,23 +95,30 @@ a {
   color: var(--color-green-darker);
 }
 
-#about {
-  border: 1rem solid var(--color-green-darker);
-  border-radius: 50px;
+#about,
+.container-about {
+  background-color: var(--color-dark);
+  width: 100%;
+  /* border-radius: 50px; */
 }
 
 #btn-back-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: none;
-    border-radius: 50%;
-    padding: 10px 15px;
-    font-size: 20px;
-    z-index: 1000;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 20px;
+  z-index: 1000;
 }
-@media (min-width:768px){
-    section{
-        height: 100vh;
-    }
+@media (min-width: 1500px) {
+  section {
+    height: 100vh;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
 }
