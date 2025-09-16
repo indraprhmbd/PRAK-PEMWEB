@@ -16,7 +16,7 @@ if (form) {
     
     inputs.forEach((input) => {
       if (input.value.trim() === "") {
-        allFilled = false;
+        allFilled = false;  
       }
     });
 

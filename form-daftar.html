@@ -38,6 +38,17 @@
             row-gap: 10px;
         }
 
+        .bg-dark .form-control,
+        .bg-dark .form-control::placeholder {
+            color: #f8f9fa;
+            /* white text */
+        }
+
+        .bg-dark .form-control::placeholder {
+            color: rgba(255, 255, 255, .6);
+            /* slightly lighter */
+        }
+
         #submitBtn:hover {
             background-color: var(--color-light);
             color: var(--color-green-darker);
@@ -136,11 +147,11 @@
                 <div class="row">
                     <label for="inputIdentity">Masukkan Identitas<span style="color: red;">*</span></label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Depan"
-                            aria-label="First name">
+                        <input type="text" class="form-control bg-dark text-light" id="inputIdentity"
+                            placeholder="Nama Depan" aria-label="First name">
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="inputIdentity" placeholder="Nama Belakang"
+                        <input type="text" class="form-control bg-dark text-light" id="inputIdentity" placeholder="Nama Belakang"
                             aria-label="Last name">
                     </div>
                 </div>
@@ -150,7 +161,7 @@
                     <div class="col-sm-12">
                         <label for="exampleFormControlInput1" class="form-label">Alamat Email<span
                                 style="color: red;">*</span></label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <input type="email" class="form-control bg-dark text-light" id="exampleFormControlInput1"
                             placeholder="nama@abcdfg.com">
                     </div>
                 </div>
@@ -161,7 +172,7 @@
                     <label for="inputGender">Jenis Kelamin<span style="color: red;">*</span></label>
                     <div class="col-sm-6">
                         <div class="form-check" id="inputGender">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" checked>
+                            <input class="form-check-input bg-dark text-light" type="radio" name="radioDefault" id="radioDefault1" checked>
                             <label class="form-check-label" for="radioDefault1">
                                 Pria
                             </label>
@@ -169,7 +180,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-check" id="inputGender">
-                            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2">
+                            <input class="form-check-input bg-dark text-light" type="radio" name="radioDefault" id="radioDefault2">
                             <label class="form-check-label" for="radioDefault2">
                                 Wanita
                             </label>
@@ -184,21 +195,21 @@
                     <label for="inputAge" class="form-label">
                         Usia<span style="color: red;">*</span>
                     </label>
-                    <input type="number" class="form-control" id="inputAge" placeholder="Masukkan usia di sini">
+                    <input type="number" class="form-control bg-dark text-light" id="inputAge" placeholder="Masukkan usia di sini">
                 </div>
 
                 <!-- Tinggi Badan -->
                 <div class="col-sm-3">
                     <label for="inputHeight" class="form-label">Tinggi Badan (cm)<span
                             style="color: red;">*</span></label>
-                    <input type="number" class="form-control" id="inputHeight" placeholder="Masukkan tinggi badan">
+                    <input type="number" class="form-control bg-dark text-light" id="inputHeight" placeholder="Masukkan tinggi badan">
                 </div>
 
                 <!-- Berat Badan -->
                 <div class="col-sm-3">
                     <label for="inputWeight" class="form-label">Berat Badan (kg)<span
                             style="color: red;">*</span></label>
-                    <input type="number" class="form-control" id="inputWeight" placeholder="Masukkan berat badan">
+                    <input type="number" class="form-control bg-dark text-light" id="inputWeight" placeholder="Masukkan berat badan">
                 </div>
             </div>
 
@@ -206,14 +217,14 @@
                 <div class="col-12">
                     <label for="exampleFormControlTextarea1" class="form-label">Alamat<span
                             style="color: red;">*</span></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                    <textarea class="form-control bg-dark text-light" id="exampleFormControlTextarea1" rows="4"
                         placeholder="Masukkan Alamat di sini"></textarea>
                 </div>
             </div>
 
             <div class="input-group mb-3">
                 <label for="selectForm" class="mx-3">Pilihan Program<span style="color: red;">*</span></label>
-                <select id="selectForm" class="form-select rounded">
+                <select id="selectForm" class="form-select rounded bg-dark text-light">
                     <option selected>Pilih program di sini</option>
                     <option value="1">Resep Makanan Sehat</option>
                     <option value="2">Komunitas Sehat</option>
@@ -226,7 +237,7 @@
             </div>
             <div class="input-group">
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="checkbox">
+                    <input type="checkbox" class="form-check-input bg-dark text-light" id="checkbox">
                     <label class="form-check-label" for="exampleCheck1">Saya setuju menyerahkan identitas untuk
                         keperluan penyesuain program latihan yang akan dibuat</label>
                 </div>
@@ -242,7 +253,7 @@
     <!-- Back to top btn-->
     <button type="button" id="btn-back-to-top" class="btn btn-success btn-lg">
         <i class="bi bi-arrow-up-short"></i>
-    </button>   
+    </button>
 
     <!-- footer -->
     <footer>
